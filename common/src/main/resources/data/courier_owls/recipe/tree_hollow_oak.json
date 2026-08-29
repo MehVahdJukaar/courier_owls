@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    " L ",
+    "L L",
+    " L "
+  ],
+  "key": {
+    "L": ["minecraft:oak_log"]
+  },
+  "result": {
+    "id": "courier_owls:tree_hollow_oak",
+    "count": 1
+  }
+}

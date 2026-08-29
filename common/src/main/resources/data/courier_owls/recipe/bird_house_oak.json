@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "SSS",
+    "P P",
+    "PPP"
+  ],
+  "key": {
+    "S": ["minecraft:oak_slab"],
+    "P": ["minecraft:oak_planks"]
+  },
+  "result": {
+    "id": "courier_owls:bird_house_oak",
+    "count": 1
+  }
+}

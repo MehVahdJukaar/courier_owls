@@ -1,0 +1,89 @@
+{
+  "variants": {
+    "facing=west,occupied=false,sealed=false": {
+      "model": "courier_owls:block/tree_hollow/oak"
+    },
+    "facing=west,occupied=true,sealed=false": {
+      "type": "courier_owls:nest",
+      "fabric:type": "courier_owls:nest",
+      "model": {
+        "model": "courier_owls:block/tree_hollow/oak"
+      },
+      "eyes": {
+        "model": "courier_owls:block/tree_hollow/eyes"
+      }
+    },
+    "facing=west,occupied=false,sealed=true": {
+      "model": "courier_owls:block/tree_hollow/oak_sealed"
+    },
+    "facing=west,occupied=true,sealed=true": {
+      "model": "courier_owls:block/tree_hollow/oak_sealed"
+    },
+    "facing=north,occupied=false,sealed=false": {
+      "model": "courier_owls:block/tree_hollow/oak",
+      "y": 90
+    },
+    "facing=north,occupied=true,sealed=false": {
+      "type": "courier_owls:nest",
+      "fabric:type": "courier_owls:nest",
+      "model": {
+        "model": "courier_owls:block/tree_hollow/oak",
+        "y": 90
+      },
+      "eyes": {
+        "model": "courier_owls:block/tree_hollow/eyes",
+        "y": 90
+      }
+    },
+    "facing=north,occupied=false,sealed=true": {
+      "model": "courier_owls:block/tree_hollow/oak_sealed"
+    },
+    "facing=north,occupied=true,sealed=true": {
+      "model": "courier_owls:block/tree_hollow/oak_sealed"
+    },
+    "facing=east,occupied=false,sealed=false": {
+      "model": "courier_owls:block/tree_hollow/oak",
+      "y": 180
+    },
+    "facing=east,occupied=true,sealed=false": {
+      "type": "courier_owls:nest",
+      "fabric:type": "courier_owls:nest",
+      "model": {
+        "model": "courier_owls:block/tree_hollow/oak",
+        "y": 180
+      },
+      "eyes": {
+        "model": "courier_owls:block/tree_hollow/eyes",
+        "y": 180
+      }
+    },
+    "facing=east,occupied=false,sealed=true": {
+      "model": "courier_owls:block/tree_hollow/oak_sealed"
+    },
+    "facing=east,occupied=true,sealed=true": {
+      "model": "courier_owls:block/tree_hollow/oak_sealed"
+    },
+    "facing=south,occupied=false,sealed=false": {
+      "model": "courier_owls:block/tree_hollow/oak",
+      "y": 270
+    },
+    "facing=south,occupied=true,sealed=false": {
+      "type": "courier_owls:nest",
+      "fabric:type": "courier_owls:nest",
+      "model": {
+        "model": "courier_owls:block/tree_hollow/oak",
+        "y": 270
+      },
+      "eyes": {
+        "model": "courier_owls:block/tree_hollow/eyes",
+        "y": 270
+      }
+    },
+    "facing=south,occupied=false,sealed=true": {
+      "model": "courier_owls:block/tree_hollow/oak_sealed"
+    },
+    "facing=south,occupied=true,sealed=true": {
+      "model": "courier_owls:block/tree_hollow/oak_sealed"
+    }
+  }
+}

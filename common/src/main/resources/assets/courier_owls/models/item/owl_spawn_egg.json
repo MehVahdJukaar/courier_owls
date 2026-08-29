@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "courier_owls:item/owl_spawn_egg"
+  }
+}

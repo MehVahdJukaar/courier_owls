@@ -1,0 +1,111 @@
+{
+  "variants": {
+    "facing=west,occupied=false": {
+      "type": "courier_owls:nest",
+      "fabric:type": "courier_owls:nest",
+      "model": {
+        "model": "courier_owls:block/bird_house/oak_body"
+      },
+      "no_ao": {
+        "model": "courier_owls:block/bird_house/oak_roof"
+      }
+    },
+    "facing=west,occupied=true": {
+      "type": "courier_owls:nest",
+      "fabric:type": "courier_owls:nest",
+      "model": {
+        "model": "courier_owls:block/bird_house/oak_body"
+      },
+      "no_ao": {
+        "model": "courier_owls:block/bird_house/oak_roof"
+      },
+      "eyes": {
+        "model": "courier_owls:block/bird_house/eyes"
+      }
+    },
+    "facing=north,occupied=false": {
+      "type": "courier_owls:nest",
+      "fabric:type": "courier_owls:nest",
+      "model": {
+        "model": "courier_owls:block/bird_house/oak_body",
+        "y": 90
+      },
+      "no_ao": {
+        "model": "courier_owls:block/bird_house/oak_roof",
+        "y": 90
+      }
+    },
+    "facing=north,occupied=true": {
+      "type": "courier_owls:nest",
+      "fabric:type": "courier_owls:nest",
+      "model": {
+        "model": "courier_owls:block/bird_house/oak_body",
+        "y": 90
+      },
+      "no_ao": {
+        "model": "courier_owls:block/bird_house/oak_roof",
+        "y": 90
+      },
+      "eyes": {
+        "model": "courier_owls:block/bird_house/eyes",
+        "y": 90
+      }
+    },
+    "facing=east,occupied=false": {
+      "type": "courier_owls:nest",
+      "fabric:type": "courier_owls:nest",
+      "model": {
+        "model": "courier_owls:block/bird_house/oak_body",
+        "y": 180
+      },
+      "no_ao": {
+        "model": "courier_owls:block/bird_house/oak_roof",
+        "y": 180
+      }
+    },
+    "facing=east,occupied=true": {
+      "type": "courier_owls:nest",
+      "fabric:type": "courier_owls:nest",
+      "model": {
+        "model": "courier_owls:block/bird_house/oak_body",
+        "y": 180
+      },
+      "no_ao": {
+        "model": "courier_owls:block/bird_house/oak_roof",
+        "y": 180
+      },
+      "eyes": {
+        "model": "courier_owls:block/bird_house/eyes",
+        "y": 180
+      }
+    },
+    "facing=south,occupied=false": {
+      "type": "courier_owls:nest",
+      "fabric:type": "courier_owls:nest",
+      "model": {
+        "model": "courier_owls:block/bird_house/oak_body",
+        "y": 270
+      },
+      "no_ao": {
+        "model": "courier_owls:block/bird_house/oak_roof",
+        "y": 270
+      }
+    },
+    "facing=south,occupied=true": {
+      "type": "courier_owls:nest",
+      "fabric:type": "courier_owls:nest",
+      "model": {
+        "model": "courier_owls:block/bird_house/oak_body",
+        "y": 270
+      },
+      "no_ao": {
+        "model": "courier_owls:block/bird_house/oak_roof",
+        "y": 270
+      },
+      "eyes": {
+        "model": "courier_owls:block/bird_house/eyes",
+        "y": 270
+      }
+    }
+  }
+}

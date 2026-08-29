@@ -1,0 +1,32 @@
+{
+  "ambientocclusion": false,
+  "textures": {
+    "eyes": "courier_owls:block/bird_house/eyes",
+    "particle": "courier_owls:block/bird_house/eyes"
+  },
+  "elements": [
+    {
+      "from": [
+        -0.01,
+        0,
+        0
+      ],
+      "to": [
+        -0.01,
+        11,
+        16
+      ],
+      "faces": {
+        "west": {
+          "uv": [
+            0,
+            5,
+            16,
+            16
+          ],
+          "texture": "#eyes"
+        }
+      }
+    }
+  ]
+}

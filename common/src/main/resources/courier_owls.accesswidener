@@ -1,0 +1,7 @@
+accessWidener	v2	official
+
+accessible method net/minecraft/world/level/pathfinder/Path setDebug ([Lnet/minecraft/world/level/pathfinder/Node;[Lnet/minecraft/world/level/pathfinder/Node;Ljava/util/Set;)V
+accessible field net/minecraft/world/entity/ai/navigation/PathNavigation pathFinder Lnet/minecraft/world/level/pathfinder/PathFinder;
+accessible method net/minecraft/world/level/levelgen/feature/treedecorators/TreeDecoratorType <init> (Lcom/mojang/serialization/MapCodec;)V
+mutable field net/minecraft/world/level/levelgen/feature/configurations/TreeConfiguration decorators Ljava/util/List;
+extendable class net/minecraft/world/level/pathfinder/Path

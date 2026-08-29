@@ -1,0 +1,33 @@
+{
+  "ambientocclusion": false,
+  "textures": {
+    "eyes": "courier_owls:block/tree_hollow/eyes",
+    "particle": "courier_owls:block/tree_hollow/eyes"
+  },
+  "elements": [
+    {
+      "from": [
+        0,
+        0,
+        -0.01
+      ],
+      "to": [
+        16,
+        16,
+        -0.01
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "texture": "#eyes",
+          "cullface": "north"
+        }
+      }
+    }
+  ]
+}
