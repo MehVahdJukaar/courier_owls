@@ -3,6 +3,7 @@ package net.mehvahdjukaar.courier_owls.owls.delivery;
 import net.mehvahdjukaar.courier_owls.compat.SupplementariesCompat;
 import net.mehvahdjukaar.courier_owls.configs.CommonConfigs;
 import net.mehvahdjukaar.courier_owls.owls.entities.OwlEntity;
+import net.mehvahdjukaar.courier_owls.parcel.CardboardPackageItem;
 import net.mehvahdjukaar.moonlight.api.platform.PlatHelper;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -25,6 +26,10 @@ public final class Deliveries {
 
     @Nullable
     public static String recipientOf(ItemStack stack) {
+        if (stack.getItem() instanceof CardboardPackageItem) {
+            String recipient = CardboardPackageItem.recipientOf(stack);
+            return recipient.isEmpty() ? null : recipient;
+        }
         return SUPPLEMENTARIES ? SupplementariesCompat.presentRecipient(stack) : null;
     }
 

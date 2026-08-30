@@ -1,0 +1,23 @@
+{
+  "parent": "minecraft:block/block",
+  "textures": {
+    "particle": "courier_owls:block/cardboard_package_side",
+    "top": "courier_owls:block/cardboard_package_top",
+    "bottom": "courier_owls:block/cardboard_package_bottom",
+    "side": "courier_owls:block/cardboard_package_side"
+  },
+  "elements": [
+    {
+      "from": [2, 0, 2],
+      "to": [14, 12, 14],
+      "faces": {
+        "down": {"texture": "#bottom", "uv": [0, 0, 16, 16], "cullface": "down"},
+        "up": {"texture": "#top", "uv": [0, 0, 16, 16]},
+        "north": {"texture": "#side", "uv": [0, 0, 16, 16]},
+        "south": {"texture": "#side", "uv": [0, 0, 16, 16]},
+        "west": {"texture": "#side", "uv": [0, 0, 16, 16]},
+        "east": {"texture": "#side", "uv": [0, 0, 16, 16]}
+      }
+    }
+  ]
+}

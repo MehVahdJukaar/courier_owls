@@ -5,9 +5,12 @@ import net.mehvahdjukaar.courier_owls.bird.brain.BirdTemptationSensor;
 import net.mehvahdjukaar.courier_owls.configs.ClientConfigs;
 import net.mehvahdjukaar.courier_owls.configs.CommonConfigs;
 import net.mehvahdjukaar.courier_owls.owls.OwlMod;
+import net.mehvahdjukaar.courier_owls.parcel.ParcelMod;
+import net.mehvahdjukaar.courier_owls.parcel.SetPackageRecipientMessage;
 import net.mehvahdjukaar.moonlight.api.misc.RegSupplier;
 import net.mehvahdjukaar.moonlight.api.platform.PlatHelper;
 import net.mehvahdjukaar.moonlight.api.platform.RegHelper;
+import net.mehvahdjukaar.moonlight.api.platform.network.NetworkHelper;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
@@ -37,11 +40,15 @@ public class BirdMod {
             res("bird_temptation"), () -> new SensorType<>(BirdTemptationSensor::new), Registries.SENSOR_TYPE);
 
     public static void commonInit() {
+        NetworkHelper.addNetworkRegistration(
+                event -> event.registerServerBound(SetPackageRecipientMessage.TYPE), 1);
+
         CommonConfigs.init();
         if (PlatHelper.getPhysicalSide().isClient()) {
             ClientConfigs.init();
         }
 
         OwlMod.init();
+        ParcelMod.init();
     }
 }
