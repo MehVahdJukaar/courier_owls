@@ -9,8 +9,6 @@ public record DirectVerdict(Kind kind, double distance, double openReach, @Nulla
     public enum Kind {
         NONE,
 
-        DISABLED,
-
         TOO_CLOSE,
         FLOWN,
 
@@ -26,10 +24,6 @@ public record DirectVerdict(Kind kind, double distance, double openReach, @Nulla
     }
 
     public static final DirectVerdict NONE = new DirectVerdict(Kind.NONE, 0.0, 0.0, null);
-
-    static DirectVerdict disabled() {
-        return new DirectVerdict(Kind.DISABLED, 0.0, 0.0, null);
-    }
 
     static DirectVerdict flown(double distance) {
         return new DirectVerdict(Kind.FLOWN, distance, distance, null);
@@ -70,7 +64,6 @@ public record DirectVerdict(Kind kind, double distance, double openReach, @Nulla
     public String summary(DirectFlightSettings settings) {
         return switch (this.kind) {
             case NONE -> "no flight asked for yet";
-            case DISABLED -> "SEARCHED: direct flight is off (directFlight)";
             case TOO_CLOSE -> String.format(Locale.ROOT,
                     "SEARCHED: %.0f blocks is inside the %.0f close-quarters floor (minDistance)",
                     this.distance, settings.minDistance);

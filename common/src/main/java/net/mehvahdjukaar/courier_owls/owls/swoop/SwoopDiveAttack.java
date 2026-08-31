@@ -59,7 +59,6 @@ public class SwoopDiveAttack extends Behavior<OwlEntity> {
         this.pullingUp = false;
         this.climbTicks = 0;
         this.struckTarget = false;
-        this.overlayTrail.clear();
 
         if (!owl.takeOverFlight()) {
             return;

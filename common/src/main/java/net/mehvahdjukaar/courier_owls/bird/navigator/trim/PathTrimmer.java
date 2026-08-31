@@ -1,6 +1,5 @@
 package net.mehvahdjukaar.courier_owls.bird.navigator.trim;
 
-import net.mehvahdjukaar.courier_owls.configs.AblationSwitches;
 import net.mehvahdjukaar.courier_owls.bird.pathfinding.NodePlacementUtil;
 import net.mehvahdjukaar.courier_owls.bird.pathfinding.CorridorRaycaster;
 import net.mehvahdjukaar.courier_owls.bird.pathfinding.ArrivalHeading;
@@ -39,7 +38,7 @@ public final class PathTrimmer {
     }
 
     public Path trim() {
-        if (!AblationSwitches.trimSearchedPaths || this.count < this.settings.minChordInterior + 2) {
+        if (this.count < this.settings.minChordInterior + 2) {
             return this.path;
         }
         boolean trimmed = false;

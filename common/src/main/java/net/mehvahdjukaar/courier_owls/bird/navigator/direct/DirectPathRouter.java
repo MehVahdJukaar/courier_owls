@@ -1,6 +1,5 @@
 package net.mehvahdjukaar.courier_owls.bird.navigator.direct;
 
-import net.mehvahdjukaar.courier_owls.configs.AblationSwitches;
 import net.mehvahdjukaar.courier_owls.bird.entity.BaseBirdMob;
 import net.mehvahdjukaar.courier_owls.bird.pathfinding.CorridorRaycaster;
 import net.mehvahdjukaar.courier_owls.bird.pathfinding.NodePlacementUtil;
@@ -27,11 +26,6 @@ public final class DirectPathRouter {
     @Nullable
     public DirectPath routeTo(BlockPos target, Vec3 from, @Nullable Path current,
                               @Nullable ArrivalHeading arrival) {
-        if (!AblationSwitches.directFlight) {
-            this.verdict = DirectVerdict.disabled();
-            return null;
-        }
-
         if (this.mob.trip().isDirectDemoted()) {
             this.verdict = DirectVerdict.demoted();
             return null;
