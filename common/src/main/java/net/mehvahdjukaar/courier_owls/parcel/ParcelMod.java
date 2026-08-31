@@ -40,7 +40,7 @@ public class ParcelMod {
     public static final Supplier<Item> CARDBOARD_PACKAGE_ITEM = RegHelper.registerItem(
             BirdMod.res(CARDBOARD_PACKAGE_NAME),
             p -> new CardboardPackageItem(CARDBOARD_PACKAGE.get(), p),
-            new Item.Properties().stacksTo(1));
+            new Item.Properties().stacksTo(1).useBlockDescriptionPrefix());
 
     public static final RegSupplier<BlockEntityType<CardboardPackageBlockEntity>> CARDBOARD_PACKAGE_TILE =
             RegHelper.registerBlockEntityType(BirdMod.res(CARDBOARD_PACKAGE_NAME),

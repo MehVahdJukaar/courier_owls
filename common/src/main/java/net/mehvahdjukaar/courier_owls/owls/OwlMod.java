@@ -217,6 +217,7 @@ public class OwlMod {
 
     private static void registerItems(Registrator<Item> event, Map<WoodType, Block> blocks) {
         blocks.forEach((wood, block) ->
-                event.registerItem(Utils.getID(block), p -> new WoodBasedBlockItem(block, p, wood)));
+                event.registerItem(Utils.getID(block), p -> new WoodBasedBlockItem(block, p, wood),
+                        new Item.Properties().useBlockDescriptionPrefix()));
     }
 }
