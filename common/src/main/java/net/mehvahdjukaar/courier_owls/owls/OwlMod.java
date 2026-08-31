@@ -77,6 +77,7 @@ public class OwlMod {
     public static final RegSupplier<SoundEvent> OWL_AMBIENT = RegHelper.registerSound(BirdMod.res("entity.owl.ambient"));
     public static final RegSupplier<SoundEvent> OWL_HURT = RegHelper.registerSound(BirdMod.res("entity.owl.hurt"));
     public static final RegSupplier<SoundEvent> OWL_DEATH = RegHelper.registerSound(BirdMod.res("entity.owl.death"));
+    public static final RegSupplier<SoundEvent> OWL_FLAP = RegHelper.registerSound(BirdMod.res("entity.owl.flap"));
 
     public static final TagKey<EntityType<?>> OWL_PREY = TagKey.create(Registries.ENTITY_TYPE, BirdMod.res("owl_prey"));
     public static final TagKey<EntityType<?>> OWL_TAME_PREY = TagKey.create(Registries.ENTITY_TYPE, BirdMod.res("owl_tame_prey"));

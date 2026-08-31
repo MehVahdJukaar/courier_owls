@@ -10,8 +10,6 @@ import net.minecraft.client.renderer.entity.layers.RenderLayer;
 import net.minecraft.util.RandomSource;
 
 public class OwlHeldItemLayer extends RenderLayer<OwlRenderState, OwlModel> {
-    private static final float BABY_SCALE = 0.75F;
-
     private final RandomSource random = RandomSource.create();
 
     public OwlHeldItemLayer(RenderLayerParent<OwlRenderState, OwlModel> renderer) {
@@ -31,10 +29,6 @@ public class OwlHeldItemLayer extends RenderLayer<OwlRenderState, OwlModel> {
         this.getParentModel().translateToFeet(poseStack);
         poseStack.mulPose(Axis.ZP.rotationDegrees(180));
 
-        if (state.isBaby && !state.chickMesh) {
-            poseStack.scale(BABY_SCALE, BABY_SCALE, BABY_SCALE);
-            poseStack.translate(0.06F, 0.76F, -0.290625F);
-        }
         ItemEntityRenderer.submitMultipleFromCount(poseStack, collector, lightCoords, state.carried,
                 this.random);
         poseStack.popPose();

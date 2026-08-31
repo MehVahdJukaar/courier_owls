@@ -11,6 +11,7 @@ import net.mehvahdjukaar.courier_owls.bird.controller.GaitSettings;
 import net.mehvahdjukaar.courier_owls.bird.entity.BirdSettings;
 import net.mehvahdjukaar.courier_owls.bird.entity.TameableBird;
 import net.mehvahdjukaar.courier_owls.owls.controller.OwlLookControl;
+import net.mehvahdjukaar.moonlight.api.platform.PlatHelper;
 import net.minecraft.util.Util;
 import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.level.storage.ValueOutput;
@@ -70,7 +71,10 @@ public class OwlEntity extends TameableBird {
                 defaults.direct(), defaults.trim());
     });
 
+    private static final float FLAP_STRIDE = 1.0F;
+
     private long lastFedTime = -1000;
+    private float nextFlap = 1.0F;
 
     private long stayOutOfNestUntil;
     @Nullable
@@ -144,6 +148,17 @@ public class OwlEntity extends TameableBird {
     @Override
     protected SoundEvent getDeathSound() {
         return OwlMod.OWL_DEATH.get();
+    }
+
+    @Override
+    protected boolean isFlapping() {
+        return this.isFlying() && this.flyDist > this.nextFlap;
+    }
+
+    @Override
+    protected void onFlap() {
+        this.playSound(OwlMod.OWL_FLAP.get(), 0.06F, 0.55F + this.random.nextFloat() * 0.1F);
+        this.nextFlap = this.flyDist + FLAP_STRIDE;
     }
 
     @Override
@@ -257,7 +272,9 @@ public class OwlEntity extends TameableBird {
     @Override
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance difficulty,
                                         EntitySpawnReason reason, @Nullable SpawnGroupData data) {
-        this.setOwlType(OwlType.forSpawn(level, this.blockPosition(), level.getBiome(this.blockPosition()), level.getRandom()));
+        boolean devEggSpawn = PlatHelper.isDev() && reason == EntitySpawnReason.SPAWN_ITEM_USE;
+        this.setOwlType(devEggSpawn ? OwlType.nextDevEggVariant()
+                : OwlType.forSpawn(level, this.blockPosition(), level.getBiome(this.blockPosition()), level.getRandom()));
         return super.finalizeSpawn(level, difficulty, reason, data);
     }
 

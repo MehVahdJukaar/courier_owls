@@ -18,7 +18,7 @@ public class OwlEyesLayer extends RenderLayer<OwlRenderState, OwlModel> {
                        OwlRenderState state, float yRot, float xRot) {
         if (state.sleeping) return;
 
-        if (state.chickMesh) return;
+        if (state.isBaby) return;
         collector.order(1).submitModel(this.getParentModel(), state, poseStack,
                 RenderTypes.eyes(state.skin.eyesTexture), lightCoords, OverlayTexture.NO_OVERLAY,
                 state.outlineColor, null);

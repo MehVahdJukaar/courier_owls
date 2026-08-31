@@ -1,20 +1,14 @@
 package net.mehvahdjukaar.courier_owls.owls.client.models;
 
-import net.minecraft.client.model.BabyModelTransform;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.CubeDeformation;
 import net.minecraft.client.model.geom.builders.CubeListBuilder;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
-import net.minecraft.client.model.geom.builders.MeshTransformer;
 import net.minecraft.client.model.geom.builders.PartDefinition;
 
-import java.util.Set;
 
 public class OwlMeshes {
-    public static final MeshTransformer BABY_TRANSFORMER =
-            new BabyModelTransform(true, 14.375F, 0.0F, 2.25F, 2.0F, 24.0F, Set.of("neck"));
-
     private static final float TAIL_REST = 0.4363F;
     private static final float WING_RAKE = 0.2618F;
     private static final float CHICK_WING_RAKE = 0.2182F;

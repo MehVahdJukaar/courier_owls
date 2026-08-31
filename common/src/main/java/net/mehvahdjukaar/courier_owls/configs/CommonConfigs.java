@@ -29,7 +29,7 @@ public class CommonConfigs {
 
         builder.push("chicks");
         CHICKS_STAY_GROUNDED = builder.comment("Chicks cannot fly: they walk everywhere until they grow up")
-                .define("chicks_stay_grounded", true);
+                .define("chicks_stay_grounded", false);
         builder.pop();
 
         builder.push("delivery");

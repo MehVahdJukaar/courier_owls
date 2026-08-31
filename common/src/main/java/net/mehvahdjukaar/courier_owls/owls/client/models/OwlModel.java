@@ -6,7 +6,6 @@ import net.mehvahdjukaar.courier_owls.bird.client.BirdAnimationConfig;
 import net.mehvahdjukaar.courier_owls.bird.client.TwoPieceWingBeat;
 import net.mehvahdjukaar.courier_owls.configs.ClientConfigs;
 import net.mehvahdjukaar.courier_owls.owls.client.renderers.OwlRenderState;
-import net.mehvahdjukaar.courier_owls.owls.entities.OwlEntity;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.util.Mth;
@@ -78,10 +77,6 @@ public class OwlModel extends EntityModel<OwlRenderState> {
 
     public static OwlModel chick(ModelPart root) {
         return new OwlModel(root, true);
-    }
-
-    public static boolean isChickMesh(OwlEntity owl) {
-        return owl.isBaby() && ClientConfigs.CHICK_MODEL.get();
     }
 
     private OwlModel(ModelPart root, boolean chickMesh) {

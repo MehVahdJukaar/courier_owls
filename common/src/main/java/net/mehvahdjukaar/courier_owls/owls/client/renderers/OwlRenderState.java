@@ -7,7 +7,6 @@ import net.minecraft.client.renderer.entity.state.LivingEntityRenderState;
 public class OwlRenderState extends LivingEntityRenderState {
     public OwlType skin = OwlType.HORNED;
 
-    public boolean chickMesh;
     public boolean sleeping;
     public boolean onFoot;
 

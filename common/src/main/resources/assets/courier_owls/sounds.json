@@ -20,5 +20,18 @@
       "courier_owls:owl/death"
     ],
     "subtitle": "subtitles.courier_owls.entity.owl.death"
+  },
+  "entity.owl.flap": {
+    "sounds": [
+      "mob/parrot/fly1",
+      "mob/parrot/fly2",
+      "mob/parrot/fly3",
+      "mob/parrot/fly4",
+      "mob/parrot/fly5",
+      "mob/parrot/fly6",
+      "mob/parrot/fly7",
+      "mob/parrot/fly8"
+    ],
+    "subtitle": "subtitles.courier_owls.entity.owl.flap"
   }
 }

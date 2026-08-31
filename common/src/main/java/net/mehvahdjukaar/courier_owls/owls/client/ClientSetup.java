@@ -14,7 +14,6 @@ public class ClientSetup {
     }
 
     public static ModelLayerLocation OWL_MODEL = loc("owl");
-    public static ModelLayerLocation OWL_BABY_MODEL = loc("owl_baby");
     public static ModelLayerLocation OWL_CHICK_MODEL = loc("owl_chick");
 
     public static void init() {
@@ -25,7 +24,6 @@ public class ClientSetup {
 
     private static void registerLayerDefinitions(ClientHelper.ModelLayerEvent event) {
         event.register(OWL_MODEL, OwlMeshes::grown);
-        event.register(OWL_BABY_MODEL, () -> OwlMeshes.grown().apply(OwlMeshes.BABY_TRANSFORMER));
         event.register(OWL_CHICK_MODEL, OwlMeshes::chick);
     }
 

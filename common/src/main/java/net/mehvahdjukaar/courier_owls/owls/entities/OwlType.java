@@ -24,7 +24,9 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.MoonPhase;
 import net.minecraft.world.level.biome.Biome;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Objects;
 import java.util.Map;
 import java.util.function.IntFunction;
@@ -38,7 +40,7 @@ public enum OwlType implements StringRepresentable {
     FISHER("fisher", OwlFeather.FISHER),
     EAGLE("eagle", OwlFeather.EAGLE),
     MOON("moon", OwlFeather.MOON),
-    DUO("duo", OwlFeather.DUO),
+    DUO("duo", OwlFeather.DUO, true),
 
     SPECTACLED("spectacled", OwlFeather.SPECTACLED);
 
@@ -54,8 +56,14 @@ public enum OwlType implements StringRepresentable {
     public final Identifier texture;
     public final Identifier sleepingTexture;
     public final Identifier eyesTexture;
+    public final boolean renameOnly;
 
     OwlType(String name, OwlFeather feather) {
+        this(name, feather, false);
+    }
+
+    OwlType(String name, OwlFeather feather, boolean renameOnly) {
+        this.renameOnly = renameOnly;
         this.name = name;
         this.feather = feather;
         this.texture = res("textures/entity/owl/" + name + ".png");
@@ -116,6 +124,24 @@ public enum OwlType implements StringRepresentable {
         if (CommonConfigs.MOON_OWLS.get() && isFullMoonNight(level, pos)
                 && rand.nextFloat() < MOON_OWL_CHANCE) return MOON;
         return getRandomFromBiome(biome, rand);
+    }
+
+    private static int devEggCycle = 0;
+
+    //for mod page screenshot
+    public static OwlType nextDevEggVariant() {
+        List<OwlType> pickable = new ArrayList<>();
+        for (OwlType type : values()) {
+            if (type.canSpawnWithEgg()) pickable.add(type);
+        }
+        if (pickable.isEmpty()) return HORNED;
+        return pickable.get(Math.floorMod(devEggCycle++, pickable.size()));
+    }
+
+    private boolean canSpawnWithEgg() {
+        if (this.renameOnly) return false;
+        if (!CommonConfigs.OWL_VARIANTS.get()) return this == HORNED;
+        return this != MOON || CommonConfigs.MOON_OWLS.get();
     }
 
     public static OwlType getRandomFromBiome(Holder<Biome> biome, RandomSource rand) {

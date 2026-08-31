@@ -5,6 +5,7 @@
   "subtitles.courier_owls.entity.owl.ambient": "Owl hoots",
   "subtitles.courier_owls.entity.owl.hurt": "Owl hurts",
   "subtitles.courier_owls.entity.owl.death": "Owl dies",
+  "subtitles.courier_owls.entity.owl.flap": "Owl flutters",
   "item.courier_owls.owl_spawn_egg": "Owl Spawn Egg",
   "message.courier_owls.nest_owner": "%s's hollow",
   "message.courier_owls.nest_given": "%s moves in",
@@ -37,7 +38,5 @@
   "courier_owls.configuration.worldgen.hollow_owl_chance.description": "Chance for a generated hollow to already have an owl in it",
   "courier_owls.configuration.model": "Model",
   "courier_owls.configuration.model.two_piece_wings": "Two Piece Wings",
-  "courier_owls.configuration.model.two_piece_wings.description": "Bend the owl's wing at the wrist. More movement, but a seam shows from some angles",
-  "courier_owls.configuration.model.chick_model": "Chick Model",
-  "courier_owls.configuration.model.chick_model.description": "Draw chicks with their own model. Off, a chick is the grown owl shrunk down"
+  "courier_owls.configuration.model.two_piece_wings.description": "Bend the owl's wing at the wrist. More movement, but a seam shows from some angles"
 }

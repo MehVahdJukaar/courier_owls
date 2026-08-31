@@ -18,14 +18,12 @@ import net.minecraft.world.entity.EquipmentSlot;
 
 public class OwlEntityRenderer extends MobRenderer<OwlEntity, OwlRenderState, OwlModel> {
     private final OwlModel grown;
-    private final OwlModel baby;
     private final OwlModel chick;
     private final ItemModelResolver itemModelResolver;
 
     public OwlEntityRenderer(EntityRendererProvider.Context context) {
         super(context, new OwlModel(context.bakeLayer(ClientSetup.OWL_MODEL)), 0.3F);
         this.grown = this.model;
-        this.baby = new OwlModel(context.bakeLayer(ClientSetup.OWL_BABY_MODEL));
         this.chick = OwlModel.chick(context.bakeLayer(ClientSetup.OWL_CHICK_MODEL));
         this.itemModelResolver = context.getItemModelResolver();
         this.addLayer(new OwlEyesLayer(this));
@@ -39,7 +37,7 @@ public class OwlEntityRenderer extends MobRenderer<OwlEntity, OwlRenderState, Ow
 
     @Override
     public Identifier getTextureLocation(OwlRenderState state) {
-        if (state.chickMesh) {
+        if (state.isBaby) {
             return state.sleeping ? OwlType.CHICK_SLEEPING_TEXTURE : OwlType.CHICK_TEXTURE;
         }
         return state.sleeping ? state.skin.sleepingTexture : state.skin.texture;
@@ -49,7 +47,6 @@ public class OwlEntityRenderer extends MobRenderer<OwlEntity, OwlRenderState, Ow
     public void extractRenderState(OwlEntity entity, OwlRenderState state, float partialTick) {
         super.extractRenderState(entity, state, partialTick);
         state.skin = OwlType.skinOf(entity);
-        state.chickMesh = OwlModel.isChickMesh(entity);
         state.sleeping = entity.isSleeping();
         state.onFoot = entity.isOnFoot();
 
@@ -76,7 +73,7 @@ public class OwlEntityRenderer extends MobRenderer<OwlEntity, OwlRenderState, Ow
     @Override
     public void submit(OwlRenderState state, PoseStack poseStack, SubmitNodeCollector collector,
                        CameraRenderState camera) {
-        this.model = state.chickMesh ? this.chick : state.isBaby ? this.baby : this.grown;
+        this.model = state.isBaby ? this.chick : this.grown;
         super.submit(state, poseStack, collector, camera);
     }
 
