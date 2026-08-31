@@ -33,6 +33,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecoratorType;
 import net.minecraft.world.inventory.MenuType;
@@ -71,6 +72,11 @@ public class OwlMod {
                     .updateInterval(3)
 
                     .sized(0.5f, 0.75f));
+
+    // temp sounds
+    public static final RegSupplier<SoundEvent> OWL_AMBIENT = RegHelper.registerSound(BirdMod.res("entity.owl.ambient"));
+    public static final RegSupplier<SoundEvent> OWL_HURT = RegHelper.registerSound(BirdMod.res("entity.owl.hurt"));
+    public static final RegSupplier<SoundEvent> OWL_DEATH = RegHelper.registerSound(BirdMod.res("entity.owl.death"));
 
     public static final TagKey<EntityType<?>> OWL_PREY = TagKey.create(Registries.ENTITY_TYPE, BirdMod.res("owl_prey"));
     public static final TagKey<EntityType<?>> OWL_TAME_PREY = TagKey.create(Registries.ENTITY_TYPE, BirdMod.res("owl_tame_prey"));

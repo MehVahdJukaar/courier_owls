@@ -1,0 +1,24 @@
+{
+  "entity.owl.ambient": {
+    "sounds": [
+      "courier_owls:owl/idle1",
+      "courier_owls:owl/idle2",
+      "courier_owls:owl/idle3",
+      "courier_owls:owl/idle4"
+    ],
+    "subtitle": "subtitles.courier_owls.entity.owl.ambient"
+  },
+  "entity.owl.hurt": {
+    "sounds": [
+      "courier_owls:owl/hurt1",
+      "courier_owls:owl/hurt2"
+    ],
+    "subtitle": "subtitles.courier_owls.entity.owl.hurt"
+  },
+  "entity.owl.death": {
+    "sounds": [
+      "courier_owls:owl/death"
+    ],
+    "subtitle": "subtitles.courier_owls.entity.owl.death"
+  }
+}

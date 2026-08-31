@@ -18,6 +18,7 @@ import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
@@ -127,6 +128,22 @@ public class OwlEntity extends TameableBird {
             NestClaim.abandon(this);
         }
         super.die(source);
+    }
+
+    @Override
+    @Nullable
+    protected SoundEvent getAmbientSound() {
+        return this.isSleeping() ? null : OwlMod.OWL_AMBIENT.get();
+    }
+
+    @Override
+    protected SoundEvent getHurtSound(DamageSource damageSource) {
+        return OwlMod.OWL_HURT.get();
+    }
+
+    @Override
+    protected SoundEvent getDeathSound() {
+        return OwlMod.OWL_DEATH.get();
     }
 
     @Override
