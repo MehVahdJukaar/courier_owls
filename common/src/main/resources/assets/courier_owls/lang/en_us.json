@@ -5,6 +5,8 @@
   "subtitles.courier_owls.entity.owl.ambient": "Owl hoots",
   "subtitles.courier_owls.entity.owl.hurt": "Owl hurts",
   "subtitles.courier_owls.entity.owl.death": "Owl dies",
+  "subtitles.courier_owls.entity.owl.burrow_enter": "Owl enters nest",
+  "subtitles.courier_owls.entity.owl.burrow_exit": "Owl leaves nest",
   "subtitles.courier_owls.entity.owl.flap": "Owl flutters",
   "item.courier_owls.owl_spawn_egg": "Owl Spawn Egg",
   "message.courier_owls.nest_owner": "%s's hollow",

@@ -11,15 +11,38 @@
   "entity.owl.hurt": {
     "sounds": [
       "courier_owls:owl/hurt1",
-      "courier_owls:owl/hurt2"
+      "courier_owls:owl/hurt2",
+      "courier_owls:owl/hurt3",
+      "courier_owls:owl/hurt4"
     ],
     "subtitle": "subtitles.courier_owls.entity.owl.hurt"
   },
   "entity.owl.death": {
     "sounds": [
-      "courier_owls:owl/death"
+      "courier_owls:owl/death1",
+      "courier_owls:owl/death2"
     ],
     "subtitle": "subtitles.courier_owls.entity.owl.death"
+  },
+  "entity.owl.burrow_exit": {
+    "sounds": [
+      "courier_owls:owl/burrow1",
+      "courier_owls:owl/burrow2"
+    ],
+    "subtitle": "subtitles.courier_owls.entity.owl.burrow_enter"
+  },
+  "entity.owl.burrow_enter": {
+    "sounds": [
+      {
+        "name": "courier_owls:owl/burrow1",
+        "pitch": 0.85
+      },
+      {
+        "name": "courier_owls:owl/burrow2",
+        "pitch": 0.85
+      }
+    ],
+    "subtitle": "subtitles.courier_owls.entity.owl.burrow_exit"
   },
   "entity.owl.flap": {
     "sounds": [

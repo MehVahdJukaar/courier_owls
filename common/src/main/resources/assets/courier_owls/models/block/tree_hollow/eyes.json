@@ -7,17 +7,17 @@
   "elements": [
     {
       "from": [
+        -0.01,
         0,
-        0,
-        -0.01
+        0
       ],
       "to": [
+        -0.01,
         16,
-        16,
-        -0.01
+        16
       ],
       "faces": {
-        "north": {
+        "west": {
           "uv": [
             0,
             0,
@@ -25,7 +25,7 @@
             16
           ],
           "texture": "#eyes",
-          "cullface": "north"
+          "cullface": "west"
         }
       }
     }

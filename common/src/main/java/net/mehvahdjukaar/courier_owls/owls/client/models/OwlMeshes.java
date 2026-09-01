@@ -85,7 +85,7 @@ public class OwlMeshes {
                 PartPose.offset(0.0F, 24.0F, 0.0F));
 
         PartDefinition chestAndLegs = body.addOrReplaceChild("chestAndLegs", CubeListBuilder.create()
-                        .texOffs(0, 0).addBox(-2.0F, 1.5F, -2.0F, 4.0F, 4.0F, 4.0F),
+                        .texOffs(0, 0).addBox(-1.5F, 1.5F, -1.5F, 3.0F, 4.0F, 3.0F),
                 PartPose.offset(0.0F, -7.5F, 0.0F));
 
         chestAndLegs.addOrReplaceChild("legRight", CubeListBuilder.create()
@@ -97,9 +97,9 @@ public class OwlMeshes {
                 PartPose.offset(1.0F, 4.5F, 0.0F));
 
         PartDefinition shoulderLeft = chestAndLegs.addOrReplaceChild("shoulderLeft",
-                CubeListBuilder.create(), PartPose.offset(2.0F, 1.5F, 0.0F));
+                CubeListBuilder.create(), PartPose.offset(1.5F, 1.5F, 0.0F));
         PartDefinition shoulderRight = chestAndLegs.addOrReplaceChild("shoulderRight",
-                CubeListBuilder.create(), PartPose.offset(-2.0F, 1.5F, 0.0F));
+                CubeListBuilder.create(), PartPose.offset(-1.5F, 1.5F, 0.0F));
 
         PartDefinition wingLeft = shoulderLeft.addOrReplaceChild("wingLeft", CubeListBuilder.create()
                         .texOffs(0, 15).addBox(0.0F, 0.0F, -2.0F, 1.0F, 4.0F, 4.0F),

@@ -57,7 +57,7 @@ public class OwlEntity extends TameableBird {
     private static final EntityDataAccessor<Boolean> DATA_SLEEPING =
             SynchedEntityData.defineId(OwlEntity.class, EntityDataSerializers.BOOLEAN);
 
-    public static final float CHICK_SCALE = 0.6F;
+    public static final float CHICK_SCALE = 0.7F;
 
     private static final int PERCHED_HEAD_SWIVEL = 155;
     private static final int FLYING_HEAD_PITCH = 35;

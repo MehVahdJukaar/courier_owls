@@ -23,7 +23,6 @@ public class OwlModel extends EntityModel<OwlRenderState> {
     private static final float FLAP_AMPLITUDE = 1.0F;
     private static final float GROWN_CARRY_DROP = 7.0F;
     private static final float CHICK_CARRY_DROP = 3.0F;
-    private static final float CHICK_SLEEP_LEG_TUCK = -0.8F;
     private static final float CHICK_SLEEP_TAIL = 0.1463F;
 
     private record SleepPose(float bodyY, float bodyZ, float neckY, float neckZ) {}
@@ -70,6 +69,7 @@ public class OwlModel extends EntityModel<OwlRenderState> {
 
     public float sit;
     public float carry;
+    public boolean curledAsleep;
 
     public OwlModel(ModelPart root) {
         this(root, false);
@@ -119,9 +119,10 @@ public class OwlModel extends EntityModel<OwlRenderState> {
         this.headTilt = state.headTilt;
         this.sit = state.sit;
         this.carry = state.carry;
+        this.curledAsleep = state.isBaby && state.sleeping;
         this.pose(state.onFoot, state.ageInTicks, state.walkAnimationPos, state.walkAnimationSpeed,
                 state.yRot, state.xRot);
-        if (state.isBaby && state.sleeping) {
+        if (this.curledAsleep) {
             this.curlUpAsleep();
         }
     }
@@ -209,8 +210,6 @@ public class OwlModel extends EntityModel<OwlRenderState> {
         this.neck.xRot = 0.0F;
         this.neck.y = this.sleepPose.neckY();
         this.neck.z = this.sleepPose.neckZ();
-        this.legLeft.xRot = CHICK_SLEEP_LEG_TUCK;
-        this.legRight.xRot = CHICK_SLEEP_LEG_TUCK;
         if (this.tail != null) {
             this.tail.xRot = CHICK_SLEEP_TAIL;
         }
@@ -221,7 +220,7 @@ public class OwlModel extends EntityModel<OwlRenderState> {
     }
 
     public boolean legsAreTucked() {
-        return this.sit >= SIT_HIDES_LEGS;
+        return this.curledAsleep || this.sit >= SIT_HIDES_LEGS;
     }
 
     public void translateToFeet(PoseStack poseStack) {

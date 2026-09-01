@@ -150,7 +150,7 @@ public class BirdNestBlockEntity extends ItemDisplayTile {
         sheltering = !owl.isTame() && (OwlAi.isSleepTime(level) || OwlAi.isRainingAround(level, worldPosition));
 
         level.gameEvent(GameEvent.BLOCK_CHANGE, worldPosition, GameEvent.Context.of(owl, this.getBlockState()));
-        level.playSound(null, worldPosition, SoundEvents.BEEHIVE_ENTER, SoundSource.BLOCKS, 1.0F, 1.0F);
+        level.playSound(null, worldPosition, OwlMod.OWL_BURROW_ENTER.get(), SoundSource.BLOCKS, 1.0F, 1.0F);
         owl.discard();
         setOccupiedState(true);
 
@@ -223,7 +223,7 @@ public class BirdNestBlockEntity extends ItemDisplayTile {
                 && NestClaim.of(owl) == null) {
             NestClaim.claim(owl, worldPosition);
         }
-        level.playSound(null, worldPosition, SoundEvents.BEEHIVE_EXIT, SoundSource.BLOCKS, 1.0F, 1.0F);
+        level.playSound(null, worldPosition, OwlMod.OWL_BURROW_EXIT.get(), SoundSource.BLOCKS, 1.0F, 1.0F);
         level.gameEvent(GameEvent.BLOCK_CHANGE, worldPosition, GameEvent.Context.of(spawned, this.getBlockState()));
         return spawned;
     }

@@ -23,9 +23,33 @@ subprojects {
     apply(plugin = "com.possible-triangle.core")
     apply(plugin = "net.mehvahdjukaar.candlelight")
     apply(plugin = "dev.mixinmcp.decompile")
+    apply(plugin = "maven-publish")
 
     dependencies {
         compileOnly("net.mehvahdjukaar:candlelight:1.2.6")
+    }
+
+    upload {
+        maven {
+            nexus()
+        }
+        curseforge {
+            dependencies {
+                required("selene")
+                optional("supplementaries")
+            }
+        }
+        modrinth {
+            dependencies {
+                required("moonlight")
+                optional("supplementaries")
+            }
+        }
+
+        forEach {
+            changelog = rootProject.file("changelog.md").readText()
+            versionName = "${mod.id.get()}-${mod.version.get()}-${project.name}"
+        }
     }
 
     tasks.withType<JavaCompile> {

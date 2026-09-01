@@ -6,15 +6,22 @@
     "end": "minecraft:block/oak_log_top",
     "front": "courier_owls:block/tree_hollow/oak"
   },
+  "display": {
+    "gui": {
+      "rotation": [30, 135, 0],
+      "translation": [0, 0, 0],
+      "scale": [0.625, 0.625, 0.625]
+    }
+  },
   "elements": [
     {
       "from": [0, 0, 0],
       "to": [16, 16, 16],
       "faces": {
-        "north": {"uv": [0, 0, 16, 16], "texture": "#front", "cullface": "north"},
+        "north": {"uv": [0, 0, 16, 16], "texture": "#side", "cullface": "north"},
         "east": {"uv": [0, 0, 16, 16], "texture": "#side", "cullface": "east"},
         "south": {"uv": [0, 0, 16, 16], "texture": "#side", "cullface": "south"},
-        "west": {"uv": [0, 0, 16, 16], "texture": "#side", "cullface": "west"},
+        "west": {"uv": [0, 0, 16, 16], "texture": "#front", "cullface": "west"},
         "up": {"uv": [0, 0, 16, 16], "texture": "#end", "cullface": "up"},
         "down": {"uv": [0, 0, 16, 16], "texture": "#end", "cullface": "down"}
       }
