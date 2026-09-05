@@ -7,14 +7,14 @@ fabric {
     accessWidener(project(":common"))
 }
 
-val moonlight_version = extra["moonlight_version"] as String
+val moonlight_curse = extra["moonlight_curse_fabric"] as String
 val codecui_version = extra["codecui_version"] as String
 val fabric_api_version = extra["fabric_api_version"] as String
 val supplementaries_version = extra["supplementaries_version"] as String
 
 dependencies {
     modImplementation("net.fabricmc.fabric-api:fabric-api:${fabric_api_version}")
-    modImplementation("net.mehvahdjukaar:moonlight-fabric:${moonlight_version}")
+    modImplementation("curse.maven:selene-499980:${moonlight_curse}")
     modRuntimeOnly("net.mehvahdjukaar:codecui-fabric:${codecui_version}")
 
     //soft dep, compile only: the common sources are built again in here and one of them touches its api
